@@ -1,0 +1,23 @@
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Tag</th>
+      <th scope="col">Url</th>
+      <th scope="col">Description</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let awesome of awesomes">
+      <td>{{ awesome.tag }}</td>
+      <td>{{ awesome.url }}</td>
+      <td>{{ awesome.descriptions }}</td>
+      <td>
+        <a class="btn btn-sm btn-primary me-1 justify-content-center" [routerLink]="['/awesome-update/',awesome.id]" routerLinkActive="router-link-active">Edit</a>
+        <button class="btn btn-sm btn-danger" (click)="delete(awesome.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
